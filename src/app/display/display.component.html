@@ -1,0 +1,15 @@
+<app-form (addQuote)="addNewQuote($event)"></app-form>
+<app-vote></app-vote>
+<div>
+  <h1>My Quote</h1>
+  <ul>
+    
+    <li *ngFor='let quote of quotes'>
+      {{quote.quote}}
+      {{quote.datePosted|dateCount}}
+      
+      
+
+    </li>
+  </ul>
+</div>
