@@ -16,11 +16,21 @@ export class DisplayComponent implements OnInit {
    
   ];
   constructor() { }
-
+  
 
   ngOnInit(): void {
   }
   
+  removeQuote(toDelete,index){
+    if(toDelete){
+      let confirmDelete = confirm('Are you sure you want to delete this quote?');
+  
+    if(confirmDelete){
+      this.quotes.splice(index,1);
+    }
+  }
+  }
+
   
  
   addNewQuote(quote){
@@ -30,5 +40,6 @@ export class DisplayComponent implements OnInit {
     this.quotes.push(quote)
     console.log(quote.quote)
   }
+   
   
 }

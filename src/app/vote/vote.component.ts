@@ -1,5 +1,5 @@
-import { Component, OnInit,EventEmitter ,Output,Input} from '@angular/core';
-import { Quote } from '@angular/compiler';
+import { Component, OnInit,EventEmitter,Output,Input} from '@angular/core';
+import { Quote } from '../quote';
 
 @Component({
   selector: 'app-vote',
@@ -8,7 +8,11 @@ import { Quote } from '@angular/compiler';
 })
 export class VoteComponent implements OnInit {
   @Input() quote: Quote;
-  @Output() Upvote = new EventEmitter();
+@Output() toDelete = new EventEmitter<boolean>();
+
+deleteQuote(remove:boolean){
+  this.toDelete.emit(remove);
+}
 
   constructor() { }
   addUpVote:number = 0;

@@ -1,4 +1,5 @@
-<div class="thumbs">
+ <div class="container d-flex ">
+ <div class="thumbs mr-5">
     <img (click)="upVote()" src="/assets/images/thumbup.png" alt="" srcset="">
    {{addUpVote}}
    
@@ -6,3 +7,8 @@
    {{addDownVote}}
    
    </div> 
+   <div>
+<button  (click)= 'deleteQuote(true)' class="btn btn-danger btn-sm"> delete</button>
+
+</div>
+</div>

@@ -1,15 +1,39 @@
-<app-form (addQuote)="addNewQuote($event)"></app-form>
-<app-vote></app-vote>
-<div>
-  <h1>My Quote</h1>
-  <ul>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <app-form (addQuote)="addNewQuote($event)"></app-form>
     
-    <li *ngFor='let quote of quotes'>
-      {{quote.quote}}
-      {{quote.datePosted|dateCount}}
+    </div>
+    <div class="col-md-6">
+      <h1>My Quote</h1>
       
-      
+        <div class="col-sm-6">
+          <div class="all-cards">
+            <div *ngFor='let quote of quotes' class="card" style="width: 20rem;">
+              <div class="card-body">
+              <p> {{quote.quote}}</p>
+              <p>{{quote.datePosted|dateCount}}</p>
+              <app-vote>*ngIf='goal.vote' [quote]='quote' (quoteDelete) = 'deleteQuote($event,i)'</app-vote>
+          </div>
+         
+        </div>
+      </div>
+        
+        
+        
+          
+        
+    
+  </div>
+</div>
 
-    </li>
-  </ul>
+
+<div>
+ 
+
+    </div>
+
+  
+</div>
+
 </div>
